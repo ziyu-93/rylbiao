@@ -24,25 +24,27 @@ $(document).ready(function() {
   //品牌列表下拉
   function pullDown() {
     $(".pull-down").on("click", function() {
-      var a = $(".logoList").height();
+      var a;
       if ($(this).attr("data") == 1) {
+        a = 8;
         $(this).addClass("whirl-bottom");
         var timeDown = setInterval(function() {
-          a = a + 10;
-          if (a >= 320) {
+          a = a + 0.5;
+          if (a >= 16) {
             clearInterval(timeDown);
             $(".pull-down").attr("data", 2);
           }
-          $(".logoList").height(a);
+          $(".logoList").css("height", "" + a + "rem");
         }, 30);
       } else {
+        a = 16;
         $(this).removeClass("whirl-bottom").addClass("whirl-top");
         var timeUp = setInterval(function() {
-          a = a - 10;
-          $(".logoList").height(a);
-          if (a <= 160) {
+          a = a - 0.5;
+          $(".logoList").css("height", "" + a + "rem");
+          if (a <= 8) {
             clearInterval(timeUp);
-            $(".logoList").height(160);
+            $(".logoList").css("height", "8rem");
             $(".pull-down").attr("data", 1).removeClass("whirl-top");
           }
         }, 30);

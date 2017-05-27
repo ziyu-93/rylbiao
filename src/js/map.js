@@ -155,7 +155,7 @@ $(document).ready(function() {
   }
 
 
-  //点击评论图片放大效果。
+  //点击评论图片放大
   function enlarge() {
     $(".pic img").on("click", function() {
       $(".img-swiper").css("display", "block");

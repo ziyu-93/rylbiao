@@ -183,7 +183,15 @@ body{
           color: #c39559;
           height: 1.3rem;
           b{
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            word-wrap: break-word;
             float: left;
+            max-width: 11.2rem;
           }
           span{
             font-size: .6rem;
@@ -197,7 +205,6 @@ body{
             height: .7rem;
             line-height: .8rem;
             float: left;
-            margin-top: .1rem;
           }
         }
         .content{
